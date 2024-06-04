@@ -29,6 +29,18 @@ const tareas = [
     }
 ]
 
+const crearTarea = async (tarea) => {
+    
+    tareas.push({
+        _id: tareas.length + 1,
+        titulo: data.titulo,
+        descripcion: data.descripcion,
+        estado: 'activa',
+        responsable: data.responsable
+    })
+}
+
+
 const obtenerTareas = async () => {
     let url = 'http://localhost:3000/tareas'
     const query = '?estado=' + estado
@@ -198,13 +210,7 @@ formCrearTarea.addEventListener('submit', async (e) => {
 
         // enviar data al servidor
 
-        tareas.push({
-            _id: tareas.length + 1,
-            titulo: data.titulo,
-            descripcion: data.descripcion,
-            estado: 'activa',
-            responsable: data.responsable
-        })
+        await crearTarea(data)
 
         renderTareas()
     }
