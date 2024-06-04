@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="./style.css">
+    <title>Task App</title>
+</head>
+<body>
+    <h1>Task App</h1>
+    <button class="button-agregar-tarea" id="abrir-form-crear">
+        <svg viewBox="0 0 448 512" fill="currentColor">
+            <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+        </svg>
+    </button>
+
+    <div class="crear-tarea" id="wrapper-form-crear">
+        <form id="form-crear-tarea">
+            <button class="button-cerrar" id="cerrar-form-crear" type="button">
+                <svg viewBox="0 0 448 512" fill="currentColor">
+                    <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+                </svg>
+            </button>
+            <h2>Crear Tarea</h2>
+            <label>
+                Titulo:
+                <input type="text" name="titulo">
+            </label>
+            <label>
+                Descripción:
+                <textarea name="descripcion"cols="30" rows="10"></textarea>
+            </label>
+            <label>
+                Responsable:
+                <input type="text" name="responsable">
+            </label>
+            <button class="button-enviar" type="submit">Crear Tarea</button>
+        </form>
+    </div>
+
+    <div class="crear-tarea" id="wrapper-form-editar">
+        <form id="form-editar-tarea">
+            <button class="button-cerrar" id="cerrar-form-editar" type="button">
+                <svg viewBox="0 0 448 512" fill="currentColor">
+                    <path d="M256 80c0-17.7-14.3-32-32-32s-32 14.3-32 32V224H48c-17.7 0-32 14.3-32 32s14.3 32 32 32H192V432c0 17.7 14.3 32 32 32s32-14.3 32-32V288H400c17.7 0 32-14.3 32-32s-14.3-32-32-32H256V80z"/>
+                </svg>
+            </button>
+            <h2>Editar Tarea</h2>
+            <label>
+                Titulo:
+                <input id="editar-titulo" type="text" name="titulo">
+            </label>
+            <label>
+                Descripción:
+                <textarea id="editar-descripcion" name="descripcion"cols="30" rows="10"></textarea>
+            </label>
+            <label>
+                Responsable:
+                <input id="editar-responsable" type="text" name="responsable">
+            </label>
+            <label>
+                Estado:
+                <input id="editar-estado" type="text" name="estado">
+            </label>
+            <button class="button-enviar" type="submit">Editar Tarea</button>
+        </form>
+    </div>
+
+
+
+    <section>
+        <select class="filtro" name="estado" id="select-estado">
+            <option value="-">Seleccione un estado para filtrar</option>
+            <option value="innactiva">Tareas inactivas</option>
+            <option value="activa">Tareas activas</option>
+            <option value="innactiva">Tareas inactivas</option>
+        </select>
+        <ul class="lista-tareas" id="lista-tareas">
+            
+            <!-- aca se renderizan las tareas -->
+
+        </ul>
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
